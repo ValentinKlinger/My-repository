@@ -23,8 +23,8 @@ def mov(formation):  # retourne une liste avec les partions qui découle d'une f
 
 def boucle(possible_formation):
     # va execute mov() jusqu'à que tous les résultats soient obtenus
-    # applique la règle de la limite de fils
-    #
+    # applique la règle de la limite de fils par rapport à k
+    # envoie les partition obtenues à formation
     a = []
     try:
         for sheet_music in possible_formation:
@@ -38,7 +38,7 @@ def boucle(possible_formation):
         boucle(possible_formation)
 
 
-def bloc_note(final_set):
+def bloc_note(final_set): # enregister les résultats obtenu dans un bloc note
     doc = open('final_set.txt', 'w', encoding='UTF-8')
     doc.write(str(final_set))
     doc.close()
